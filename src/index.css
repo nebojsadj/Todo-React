@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(84, 124, 168);
+}
+
+input {
+    background-color: yellow !important;
+}
+
+.done {
+    text-align: center;
+    color: green;
+}
+
+.notDone {
+    text-align: center;
+    color: red;
+}
