@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import store from "../redux/store";
 import { add_action } from "../redux/actionCreators";
+import { useDispatch } from "react-redux";
 
 function AddTodo() {
   const [todo, setTodo] = useState({ id: "", task: "", done: false });
+  const dispatch = useDispatch();
 
   const addTodo = () => {
-    store.dispatch(add_action(todo));
+    dispatch(add_action(todo));
     setTodo({ ...todo, task: "" });
   };
 
