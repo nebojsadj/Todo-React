@@ -3,12 +3,12 @@ import { add_action } from "../redux/actionCreators";
 import { useDispatch } from "react-redux";
 
 function AddTodo() {
-  const [todo, setTodo] = useState({ id: "", task: "", done: false });
+  const [task, setTask] = useState("");
   const dispatch = useDispatch();
 
   const addTodo = () => {
-    dispatch(add_action(todo));
-    setTodo({ ...todo, task: "" });
+    dispatch(add_action(task));
+    setTask("");
   };
 
   return (
@@ -16,17 +16,11 @@ function AddTodo() {
       <div className="row mt-2">
         <div className="col-6 offset-3 mt-4">
           <input
-            onChange={(e) =>
-              setTodo({
-                ...todo,
-                id: Math.floor(Math.random() * (1000 - 10) + 10),
-                task: e.target.value,
-              })
-            }
+            onChange={(e) => setTask(e.target.value)}
             type="text"
             placeholder="Enter task"
             className="form-control text-center"
-            value={todo.task}
+            value={task}
           />
           <button
             onClick={addTodo}

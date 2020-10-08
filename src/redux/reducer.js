@@ -13,7 +13,17 @@ function reducer(state = initState, action) {
       let filtered = state.todoList.filter((el) => el.id !== action.payload.id);
       return { ...state, todoList: filtered };
     case addTodo:
-      return { ...state, todoList: [...state.todoList, action.payload.add] };
+      return {
+        ...state,
+        todoList: [
+          ...state.todoList,
+          {
+            id: action.payload.id,
+            task: action.payload.task,
+            done: action.payload.done,
+          },
+        ],
+      };
 
     default:
       return state;

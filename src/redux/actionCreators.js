@@ -24,11 +24,13 @@ export const delete_action = (id) => {
   };
 };
 
-export const add_action = (add) => {
+export const add_action = (task) => {
   return {
     type: addTodo,
     payload: {
-      add: add,
+      id: Math.floor(Math.random() * (1000 - 10) + 10),
+      task: task,
+      done: false,
     },
   };
 };
