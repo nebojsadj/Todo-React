@@ -6,11 +6,11 @@ export const load_action = () => {
   };
 };
 
-export const mark_action = (id) => {
+export const mark_action = (index) => {
   return {
     type: markTodo,
     payload: {
-      id: id,
+      index: index,
     },
   };
 };

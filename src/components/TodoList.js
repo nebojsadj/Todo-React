@@ -12,7 +12,7 @@ function TodoList() {
           <div className="row">
             {todoList.map((todo, index) => (
               <div className="col-6 offset-3 mt-4" key={index}>
-                <Todo todo={todo} />
+                <Todo todo={todo} index={index} />
               </div>
             ))}
           </div>

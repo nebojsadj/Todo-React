@@ -6,7 +6,7 @@ import {
 } from "../redux/actionCreators";
 import { useDispatch } from "react-redux";
 
-function Todo({ todo }) {
+function Todo({ todo, index }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function Todo({ todo }) {
         <h2 className={todo.done ? "done" : "notDone"}>{todo.task}</h2>
         <button
           onClick={() => {
-            dispatch(mark_action(todo.id));
+            dispatch(mark_action(index));
           }}
           className="btn btn-warning btn-sm float-left"
         >
