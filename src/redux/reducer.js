@@ -6,9 +6,8 @@ function reducer(state = initState, action) {
     case loadTodo:
       return state;
     case markTodo:
-      state.todoList[action.payload.index].done = !state.todoList[
-        action.payload.index
-      ].done;
+      const index = action.payload.index;
+      state.todoList[index].done = !state.todoList[index].done;
       return { ...state, todoList: [...state.todoList] };
     case deleteTodo:
       let filtered = state.todoList.filter((el) => el.id !== action.payload.id);
