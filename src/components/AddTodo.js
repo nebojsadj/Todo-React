@@ -23,6 +23,7 @@ function AddTodo() {
             value={task}
           />
           <button
+            disabled={!task}
             onClick={addTodo}
             className="btn btn-dark mx-auto d-block mt-3"
           >

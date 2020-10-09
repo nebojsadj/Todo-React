@@ -10,7 +10,9 @@ function reducer(state = initState, action) {
       state.todoList[index].done = !state.todoList[index].done;
       return { ...state, todoList: [...state.todoList] };
     case deleteTodo:
-      let filtered = state.todoList.filter((el) => el.id !== action.payload.id);
+      const filtered = state.todoList.filter(
+        (el) => el.id !== action.payload.id
+      );
       return { ...state, todoList: filtered };
     case addTodo:
       return {
