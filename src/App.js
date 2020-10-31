@@ -1,15 +1,15 @@
-import React from "react";
+import React, { StrictMode } from "react";
 import TodoList from "./components/TodoList";
 import Header from "./components/Header";
 import AddTodo from "./components/AddTodo";
 
 function App() {
   return (
-    <React.Fragment>
+    <StrictMode>
       <Header />
       <AddTodo />
       <TodoList />
-    </React.Fragment>
+    </StrictMode>
   );
 }
 
