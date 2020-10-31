@@ -1,17 +1,9 @@
-import React, { useEffect } from "react";
-import {
-  load_action,
-  mark_action,
-  delete_action,
-} from "../redux/actionCreators";
+import React from "react";
+import { mark_action, delete_action } from "../redux/actionCreators";
 import { useDispatch } from "react-redux";
 
 function Todo({ todo, index }) {
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(load_action());
-  }, []);
 
   return (
     <div className="card">
