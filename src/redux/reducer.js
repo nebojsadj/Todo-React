@@ -1,10 +1,8 @@
 import initState from "./initState";
-import { loadTodo, markTodo, deleteTodo, addTodo } from "./types";
+import { markTodo, deleteTodo, addTodo } from "./types";
 
 function reducer(state = initState, action) {
   switch (action.type) {
-    case loadTodo:
-      return state;
     case markTodo:
       const index = action.payload.index;
       state.todoList[index].done = !state.todoList[index].done;

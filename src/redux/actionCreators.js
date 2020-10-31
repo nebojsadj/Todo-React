@@ -1,10 +1,4 @@
-import { loadTodo, markTodo, deleteTodo, addTodo } from "./types";
-
-export const load_action = () => {
-  return {
-    type: loadTodo,
-  };
-};
+import { markTodo, deleteTodo, addTodo } from "./types";
 
 export const mark_action = (index) => {
   return {
