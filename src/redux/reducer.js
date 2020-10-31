@@ -15,14 +15,7 @@ function reducer(state = initState, action) {
     case addTodo:
       return {
         ...state,
-        todoList: [
-          ...state.todoList,
-          {
-            id: action.payload.id,
-            task: action.payload.task,
-            done: action.payload.done,
-          },
-        ],
+        todoList: [...state.todoList, action.payload],
       };
 
     default:
