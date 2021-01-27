@@ -1,17 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Kalam", cursive;
+}
 body {
-    background-color: rgb(84, 124, 168);
+  background-color: #0275d8;
 }
 
 input {
-    background-color: yellow !important;
+  font-size: 24px !important;
 }
 
 .done {
-    text-align: center;
-    color: green;
+  text-align: center;
+  text-decoration: line-through;
 }
-
 .notDone {
-    text-align: center;
-    color: red;
+  text-align: center;
+  text-decoration: none;
+}
+.form-check-input {
+  width: 20px;
+  height: 20px;
+}
+.form-check-label {
+  color: #0275d8;
+  margin: 5px 5px;
+}
+@media all and (max-width: 425px) {
+  .card {
+    width: 360px !important;
+  }
+}
+@media all and (max-width: 375px) {
+  .card {
+    width: 315px !important;
+  }
+}
+@media all and (max-width: 320px) {
+  .card {
+    width: 260px !important;
+  }
 }

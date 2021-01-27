@@ -8,7 +8,7 @@ const initState = {
     {
       id: 2,
       task: "Nahraniti psa",
-      done: true,
+      done: false,
     },
     {
       id: 3,

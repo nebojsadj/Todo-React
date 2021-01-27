@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Container, Col, Row, Form, Button } from "react-bootstrap";
 import { add_action } from "../redux/actionCreators";
 import { useDispatch } from "react-redux";
 
@@ -12,26 +13,28 @@ function AddTodo() {
   };
 
   return (
-    <div className="container">
-      <div className="row mt-2">
-        <div className="col-6 offset-3 mt-4">
-          <input
+    <Container>
+      <h2 className="text-white text-center mt-4">Todo React App</h2>
+      <Row className="mt-2">
+        <Col className="mt-4">
+          <Form.Control
             onChange={(e) => setTask(e.target.value)}
             type="text"
             placeholder="Enter task"
             className="form-control text-center"
             value={task}
           />
-          <button
+          <Button
+            variant="dark"
             disabled={!task}
             onClick={addTodo}
-            className="btn btn-dark mx-auto d-block mt-3"
+            className="mx-auto d-block mt-3"
           >
             Add Task
-          </button>
-        </div>
-      </div>
-    </div>
+          </Button>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
