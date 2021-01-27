@@ -1,8 +1,12 @@
 import React from "react";
 import { mark_action, delete_action } from "../redux/actionCreators";
 import { useDispatch } from "react-redux";
-import { Card, Form } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { MdDeleteForever } from "react-icons/md";
+import {
+  RiCheckboxCircleLine,
+  RiCheckboxBlankCircleLine,
+} from "react-icons/ri";
 
 function Todo({ todo, index }) {
   const dispatch = useDispatch();
@@ -17,21 +21,30 @@ function Todo({ todo, index }) {
       }}
     >
       <Card.Body>
-        <Card.Text className="text-success">Task {index + 1}</Card.Text>
+        <Card.Text style={{ fontSize: "20px" }} className="text-success">
+          Task {index + 1}
+        </Card.Text>
         <Card.Title
           className={todo.done ? "done" : "notDone"}
           style={{ fontSize: "25px" }}
         >
           {todo.task}
         </Card.Title>
-        <Form.Check
-          onClick={() => {
-            dispatch(mark_action(index));
-          }}
-          type="checkbox"
-          label="MARK"
-          className="btn-sm text-warning float-left"
-        />
+        {todo.done ? (
+          <RiCheckboxCircleLine
+            onClick={() => {
+              dispatch(mark_action(index));
+            }}
+            style={{ color: "#5cb85c", width: "30px", height: "30px" }}
+          />
+        ) : (
+          <RiCheckboxBlankCircleLine
+            onClick={() => {
+              dispatch(mark_action(index));
+            }}
+            style={{ color: "#d9534f", width: "30px", height: "30px" }}
+          />
+        )}
         <MdDeleteForever
           size="2em"
           onClick={() => dispatch(delete_action(todo.id))}

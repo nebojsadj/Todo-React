@@ -16,7 +16,11 @@ function AddTodo() {
     <Container>
       <h2 className="text-white text-center mt-4">Todo React App</h2>
       <Row className="mt-2">
-        <Col className="mt-4">
+        <Col
+          md={{ span: 6, offset: 3 }}
+          xs={{ span: 10, offset: 1 }}
+          className="mt-4"
+        >
           <Form.Control
             onChange={(e) => setTask(e.target.value)}
             type="text"

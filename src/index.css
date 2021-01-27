@@ -23,10 +23,12 @@ input {
   width: 20px;
   height: 20px;
 }
+
 .form-check-label {
   color: #0275d8;
   margin: 5px 5px;
 }
+
 @media all and (max-width: 425px) {
   .card {
     width: 360px !important;
